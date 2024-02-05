@@ -1,0 +1,28 @@
+<div class="titles">
+  <div class="title"><span>Outcomes by case type</span></div>
+  <div class="title2"><span>Med. days to outcome</span></div>
+</div>
+<div class="charts">
+  <div class="bar">
+    <app-stacked-horizontal-bar id="1" label="Intellectual Property & Technology" [data]="getStackedData()"></app-stacked-horizontal-bar>
+    <app-stacked-horizontal-bar id="2" label="Civil" [data]="getStackedData2()"></app-stacked-horizontal-bar>
+    <app-stacked-horizontal-bar id="3" label="Contracts" [data]="getStackedData()"></app-stacked-horizontal-bar>
+    <app-stacked-horizontal-bar id="4" label="Practice & Procedure" [data]="getStackedData2()"></app-stacked-horizontal-bar>
+    <app-stacked-horizontal-bar id="5" label="Remedies & Enforcement" [data]="getStackedData()"></app-stacked-horizontal-bar>
+    
+    <div class="legends">
+      <ng-container *ngFor="let item of colorMapping | keyvalue">
+        <span [style.color]="item.key" class="square"></span>
+        <span class="legend">
+          <span>{{ item.value }}</span>
+        </span>
+      </ng-container>
+    </div>
+  </div>
+  <div class="box">
+    <app-box-plot [data]="getBoxPlotData()"></app-box-plot>
+  </div>
+</div>
+
+
+

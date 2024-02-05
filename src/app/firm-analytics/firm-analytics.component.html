@@ -1,0 +1,14 @@
+<span>Firm Analytics View</span>
+<div>
+  <app-outcomes-by-type-analytics></app-outcomes-by-type-analytics>
+</div>
+<div>
+  <app-map-us [data]="getMapData()"></app-map-us>
+</div>
+<div>
+  <app-dockets-litigation></app-dockets-litigation>
+</div>
+<div class="top-5">
+  <app-case-type id="case-type" label="Top 5 federal case types"></app-case-type>
+  <app-case-type id="courts" label="Top 5 federal courts"></app-case-type>
+</div>

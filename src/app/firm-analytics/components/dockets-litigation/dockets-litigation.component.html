@@ -1,0 +1,18 @@
+<div class="title"><span>Dockets by litigation attorney</span></div>
+
+<table>
+  <tr>
+    <th id="label">Attorneys</th>
+    <th id="chart">Dockets</th>
+    <th id="total">Total</th>
+  </tr>
+  <tr *ngFor="let item of getHorizontalData()">
+    <td class="label-column" id="label">{{ item.label }}</td>
+    <td id="chart"><app-horizontal-bar [maxValue]="getMaxValue()" [data]="[item]"></app-horizontal-bar></td>
+    <td class="total-column">{{ item.value }}</td>
+  </tr>
+</table>
+
+<button (click)="onShowButtonClick()" class="show-more">{{ getButtoText() }}</button>
+
+

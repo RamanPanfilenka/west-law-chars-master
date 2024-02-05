@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th id="label">{{label}}</th>
+    <th id="total">Dockets</th>
+  </tr>
+  <ng-container *ngFor="let item of getHorizontalData()">
+  <tr >
+      <td class="label-column" id="label">{{ item.label }}</td>
+      <td class="total-column">{{ item.value }}</td>
+  </tr>
+  <tr >
+    <td id="chart" colspan="2"><app-horizontal-bar [maxValue]="getMaxValue()" [data]="[item]"></app-horizontal-bar></td>
+  </tr>
+  </ng-container>
+  
+</table>
+
+<button (click)="onShowButtonClick()" class="show-more">{{ getButtoText() }}</button>
+
+
